@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block content %}
+<html lang="en">
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8  offset-lg-2">
+            <h2 class="mt-5" style="color:blue;"> Take Real Time Videos Recording </h2>
+			<form method="post" action="{{ url_for('tasks') }}">
+			<input style="color: green;" type="submit" value="Stop/Start" name="stop" />
+			<input style="color: green;" type="submit" value="Grey" name="grey" />
+			<input style="color: green;" type="submit" value="Negative" name="neg" />
+			<input style="color: green;" type="submit" value="Face Only" name="face" />
+			<input style="color: green;" type="submit" value="Start/Stop Recording" name="rec" />
+			</form>
+			<a style="text-decoration:none; color:green;" href="http://localhost:5000/localImage"><button>Encode Videos</button></a>
+            <a style="text-decoration:none; color:green;" href="http://localhost:5000/downloadFileVideo"><button>Download Videos</button></a>
+			<img src="{{ url_for('video_feed') }}" height="480px" width="680px">
+
+
+			{% if framename %}
+				<h4>Your image save successfully in this folder(Remmender the image name) {{ framename }}</h4>
+			{% endif %}
+
+        </div>
+    </div>
+</div>
+</body>
+</html>
+
+
+
+{% endblock %}

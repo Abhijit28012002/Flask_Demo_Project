@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/homeStyle.css')}}">
+</head>
+<body>
+    <h1> PixelWhisper </h1>
+    <div class="homemenu">
+        <div class="RowOne">
+            <div class = "firstRow">
+                    <button class='row' ><a style="text-decoration:none; color: black;" href="/imageFrame" class="rowa">Real Time Images <br> Steganography</a></button>
+            </div>
+
+            <div class="firstRow">
+                    <button class='row'><a style="text-decoration:none; color: black;" href="/videoFrame" class="rowa">Real Time Videos <br> Steganography</a></button>
+            </div>
+        </div>
+        <div class="RowOne">
+            <div class = "firstRow">
+                    <button class='row' ><a style="text-decoration:none; color: black;" href="/localImage" class="rowa">Local Device Encode Images/Videos <br> Steganography</a></button>
+            </div>
+
+            <div class="firstRow">
+                    <button class='row'><a style="text-decoration:none; color: black;" href="/localDecode" class="rowa">Local Device Decode Images/Videos <br> Steganography</a></button>
+            </div>
+        </div>
+
+        <div class="RowSecond">
+            <button class='row'><a style="text-decoration:none; color: black;" href="/shareFile"  class="rowa">Send Your Image/Video To your Friends <br> Using Whatsapp/Telegram</a></button>
+        </div>
+    </div>
+</body>
+</html>
+
+
+{% endblock %}

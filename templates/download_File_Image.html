@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+<html>
+<head>
+
+</head>
+<body>
+    <div style="margin: 20px">
+        {% if file_lists_names %}
+            {% for filename in file_lists_names %}
+                <div style="margin:20px">
+                <a href="/get-files-images/{{ filename }}">{{ filename }}</a> <img src="{{ url_for('static', filename='/Real_Time_Take_Images/' + filename) }}" alt="not avalable Now" width="100px" height="100px"> <br>
+                </div>
+            {% endfor %}
+        {% endif %}
+    </div>
+</body>
+</html>
+
+
+
+{% endblock %}

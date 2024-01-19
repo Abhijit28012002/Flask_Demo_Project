@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #sendHead{
+            text-align: center;
+            color: green;
+        }
+        #sharefileform{
+            text-align: center;
+            margin: 50px;
+        }
+        #sharefileform input{
+          margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    {% if  not sendprocess %}
+    <h3 id="sendHead">Send Your Images/Videos Using WhatsApp/Email </h3>
+    <form action="#" method="post" id="sharefileform">
+        Enter Which Process You want to Use<input name="sendprocess" List="sendProcesses" placeholder="send Procedure select"><br>
+        <datalist id="sendProcesses">
+            <option value="WhatsApp"></option>
+            <option value="Email"></option>
+        </datalist>
+        <input type="submit" value="Submit">
+    </form>
+    {% endif %}
+    {% if sendprocess=='WhatsApp'%}
+    <form action="" method="post" id="sharefileform">
+        <h4 style="color: blue;">Send File Using WhatsApp Number</h4><br>
+        Which File You want to send select<input type="file" name="selectFile" id="selectFile" accept="image/* , video/*"><br>
+        Enter the Mobile number<input type="text" name="phonenum" id="phonenum"><br>
+        <input type="submit" value="Send">
+    </form>
+    {% endif %}
+
+    {% if sendprocess=='Email'%}
+    <form action="#" method="post" id="sharefileform">
+        <h4 style="color: blue;">Send File Using WhatsApp Number</h4> <br>
+        Which File You want to send select <input type="file" name="selectFile" id="selectFile" accept="image/* , video/*"><br>
+        Enter Reciver Email Address <input type="email" name="email" id="email"><br>
+        <input type="submit" value="Send">
+    </form>
+    {% endif %}
+</body>
+</html>
+
+{% endblock %}

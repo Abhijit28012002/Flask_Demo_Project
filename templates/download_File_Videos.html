@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+<html>
+<head>
+
+</head>
+<body>
+    <div style="margin: 20px">
+        {% if file_lists_names %}
+            {% for filename in file_lists_names %}
+                <div style="margin:20px">
+                <a href="/get-files-videos/{{ filename }}">{{ filename }}</a><br>
+                </div>
+            {% endfor %}
+        {% endif %}
+    </div>
+</body>
+</html>
+
+
+
+{% endblock %}
